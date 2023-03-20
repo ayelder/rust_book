@@ -22,3 +22,13 @@ Control Flow
 * Loops can be labeled. Those labels can then be used in `break` and `continue`.
     * https://doc.rust-lang.org/book/ch03-05-control-flow.html#loop-labels-to-disambiguate-between-multiple-loops
 * `for` loops are range based, like Python.
+
+Ownership
+* Memory is managed through a system of ownership with a set of rules that the compiler checks.
+* Rust will never automatically create “deep” copies of your data.
+* If an object is on the stack then a copy is performed on assignment. If it is on the heap then a move is performed on assignment.
+    * https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#variables-and-data-interacting-with-move
+    * Nit: This may not be completely true, what really determines if a copy happens is if the `Copy` trait is present for that type.
+* `clone` performs deep copies.
+    * https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#variables-and-data-interacting-with-clone
+
